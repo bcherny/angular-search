@@ -1,0 +1,97 @@
+// icon font
+
+@import "./bower_components/turn-icon-font/dist/font";
+@include turn-icon-font("./bower_components/turn-icon-font/dist/");
+
+// mixins
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
+}
+
+// vars
+
+$listFilterBorder: #bbbdbf;
+
+// styles
+
+.list-filter-text {
+	display: inline-block;
+	padding-bottom: 27px;
+	position: relative;
+
+	// placeholder text
+	@include placeholder {
+		font-style: italic;
+	}
+
+	// loupe icon
+	.tif-search {
+		color: #666;
+		font-size: 16px;
+		position: absolute;
+			left: 8px;
+			top: 7px;
+	}
+
+	// clear icon
+	.tif-delete {
+		color: #999;
+		display: block;
+		font-size: 23px;
+		line-height: 31px;
+		position: absolute;
+			right: 5px;
+			top: 0;
+
+		&:before {
+			display: block;
+			height: 50px;
+		}
+
+		&:hover {
+			color: #777;
+		}
+	}
+
+	label {
+		text-transform: capitalize;
+		display: inline;
+		font-weight: normal;
+		vertical-align: middle;
+	}
+
+	input {
+		border: 1px solid #999;
+		border-radius: 3px;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+		font-size: 13px;
+		line-height: 21px;
+		padding: 4px 8px 4px 28px;
+	}
+
+	// press ENTER to search
+	.press-enter {
+		color: #999;
+		display: block;
+		font-size: 12px;
+		line-height: 26px;
+		position: absolute;
+			bottom: 0;
+			right: 0;
+
+		kbd {
+			background: #999;
+			box-shadow: none;
+			cursor: default;
+			text-transform: uppercase;
+
+			&:hover {
+				background: #888;
+			}
+		}
+	}
+}

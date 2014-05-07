@@ -1,0 +1,112 @@
+<!doctype html>
+<html ng-app="demo">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>list-filter-text demo</title>
+
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./list-filter-text.css">
+
+	<style>
+
+		body {
+			background: #f8f8f8;
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		.list-filter-text input,
+		.list-group {
+			width: 500px;
+		}
+
+		.list-group {
+			height: 200px;
+			margin: 20px auto 0;
+			overflow-y: auto;
+			text-align: left;
+		}
+
+		.no-results {
+			color: #999;
+			font-style: italic;
+			padding: 30px 0;
+			text-align: center;
+		}
+
+		.loading {
+			background: #fff url("./img/spinner_48.gif") center no-repeat;
+			background-size: 48px;
+			content: "";
+			height: 160px;
+		}
+
+
+		@media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+			.loading {
+				background-image: url("./img/spinner_96.gif");
+			}
+		}
+
+	</style>
+
+</head>
+<body ng-controller="mainCtrl">
+
+	<list-filter-text
+		param="searchText"
+		clear-text="clearSearchText"
+		size="medium"
+		placeholder="Search"
+		action="fetch"
+	></list-filter-text>
+
+	<ul class="list-group">
+		<li class="list-group-item loading" ng-show="loading"></li>
+		<li class="list-group-item no-results" ng-show="!loading && !results.length">No results for <strong>{{ searchText }}</strong></li>
+		<li class="list-group-item" ng-repeat="result in results">{{ result }}</li>
+	</ul>
+
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./list-filter-text.js"></script>
+	<script>
+
+		angular
+		.module('demo', ['listFilterText'])
+		.controller('mainCtrl', function ($scope, $http) {
+
+			angular.extend($scope, {
+				loading: false,
+				results: [],
+				searchText: ''
+			});
+
+			$scope.$watch('searchText', function (text) {
+				console.log(text);
+
+				$scope.loading = true;
+				$scope.results = [];
+
+				$http
+					.get('http://localhost:8001', {
+						cache: true,
+						params: { search: text }
+					})
+					.success(function (results) {
+						$scope.loading = false;
+						$scope.results = results;
+					})
+					.error(function (err) {
+						$scope.loading = false;
+						throw new Error (err);
+					});
+			});
+
+		});
+
+	</script>
+</body>
+</html>
