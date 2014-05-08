@@ -66,7 +66,23 @@ angular
 	<!-- submit onKeyUp rather than onSubmit -->
 	typeAhead="true"
 
-	<!-- disable the input when this expression evaluates to true -->
-	disabled="foo=true"
+	<!-- disable the input when $scope.foo evaluates to true -->
+	disabled="foo"
 ></list-filter-text>
+```
+
+## hacking on it
+
+```bash
+bower install
+npm install
+grunt watch
+```
+
+## running the tests
+
+```bash
+bower install
+npm install
+grunt test
 ```

@@ -61,6 +61,12 @@ module.exports = (grunt) ->
 				options:
 					interrupt: true
 					spawn: false
+			test:
+				files: './test/*.js'
+				tasks: ['html2js', 'jasmine']
+				options:
+					interrupt: true
+					spawn: false
 
 	grunt.registerTask 'default', build
 	grunt.registerTask 'test', ['html2js', 'jasmine']

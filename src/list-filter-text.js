@@ -32,13 +32,13 @@ angular
 		restrict: 'E',
 		scope: {
 			param: '=',
-			className: '=class',
+			class: '@',
 			typeAhead: '=',
 			placeholder: '@',
             disabled: '='
 		},
 		templateUrl: 'list-filter-text.html',
-		link: function (scope, element) {
+		link: function (scope, element, attrs) {
 
 			angular.extend(scope, {
 
@@ -62,13 +62,13 @@ angular
 				 * Fired by the <input> on onKeyUp
 				 * @param  {Event} e
 				 */
-				keyup: function(e) {
+				change: function(e) {
 					var code = e.keyCode || e.which;
 
 					if (scope.typeAhead || code === KEYS.enter) {
 						scope.search();
 					} else if (code === KEYS.esc) {
-						scope.clearSearch();
+						scope.clear();
 						scope.blur();
 					} else {
 						scope.dirty = true;
@@ -89,7 +89,7 @@ angular
 				/**
 				 * Clears the <input>
 				 */
-				clearSearch: function() {
+				clear: function() {
 					scope.searchString = '';
 					scope.search();
 				}
@@ -101,14 +101,14 @@ angular
 			 */
 			scope.$watch('api.clearFlag', function (bool) {
 				if (bool === true) {
-					scope.clearSearch();
+					scope.clear();
 					scope.api.reset();
 				}
 			});
 
 			// TODO: investigate why this doesn't work when
 			//       declared in the DOM
-			element.find('input').on('keyup paste', scope.keyup);
+			element.find('input').on('keyup paste', scope.change);
 
 		}
 	};

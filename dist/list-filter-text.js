@@ -7,9 +7,9 @@ angular.module("list-filter-text.html", []).run(["$templateCache", function($tem
     "	<span class=\"tif-delete\" ng-show=\"searchString\" ng-click=\"clearSearch()\"></span>\n" +
     "	<input\n" +
     "		type=\"search\"\n" +
-    "		ng-class=\"className\"\n" +
-    "		ng-disabled=\"disabled\"\n" +
     "		ng-model=\"searchString\"\n" +
+    "		class=\"{{ class }}\"\n" +
+    "		ng-disabled=\"disabled\"\n" +
     "		placeholder=\"{{ placeholder }}\"\n" +
     "	>\n" +
     "	<span\n" +
@@ -48,25 +48,25 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
       restrict: 'E',
       scope: {
         param: '=',
-        className: '=class',
+        class: '@',
         typeAhead: '=',
         placeholder: '@',
         disabled: '='
       },
       templateUrl: 'list-filter-text.html',
-      link: function (scope, element) {
+      link: function (scope, element, attrs) {
         angular.extend(scope, {
           api: listFilterTextApi,
           dirty: false,
           blur: function () {
             element.find('input').blur();
           },
-          keyup: function (e) {
+          change: function (e) {
             var code = e.keyCode || e.which;
             if (scope.typeAhead || code === KEYS.enter) {
               scope.search();
             } else if (code === KEYS.esc) {
-              scope.clearSearch();
+              scope.clear();
               scope.blur();
             } else {
               scope.dirty = true;
@@ -79,7 +79,7 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
             });
             scope.dirty = false;
           },
-          clearSearch: function () {
+          clear: function () {
             scope.searchString = '';
             scope.search();
           }
@@ -89,13 +89,13 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
 			 */
         scope.$watch('api.clearFlag', function (bool) {
           if (bool === true) {
-            scope.clearSearch();
+            scope.clear();
             scope.api.reset();
           }
         });
         // TODO: investigate why this doesn't work when
         //       declared in the DOM
-        element.find('input').on('keyup paste', scope.keyup);
+        element.find('input').on('keyup paste', scope.change);
       }
     };
   }

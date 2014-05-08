@@ -3,9 +3,9 @@
 	<span class="tif-delete" ng-show="searchString" ng-click="clearSearch()"></span>
 	<input
 		type="search"
-		ng-class="className"
-		ng-disabled="disabled"
 		ng-model="searchString"
+		class="{{ class }}"
+		ng-disabled="disabled"
 		placeholder="{{ placeholder }}"
 	>
 	<span
