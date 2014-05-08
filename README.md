@@ -3,6 +3,8 @@ list-filter-text directive
 
 a simple search directive
 
+![screenshot](https://stash.turn.com/projects/CNSL/repos/list-filter-text/browse/screenie.png?raw&at=alpha)
+
 ## dependencies
 
 - angular 1.0.8
