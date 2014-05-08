@@ -1,12 +1,19 @@
 module.exports = (grunt) ->
 
-	grunt.loadNpmTasks 'grunt-contrib-clean'
-	grunt.loadNpmTasks 'grunt-contrib-concat'
-	grunt.loadNpmTasks 'grunt-contrib-jasmine'
-	grunt.loadNpmTasks 'grunt-contrib-sass'
-	grunt.loadNpmTasks 'grunt-html2js'
-	grunt.loadNpmTasks 'grunt-ngmin'
+	[
+		'grunt-contrib-clean'
+		'grunt-contrib-concat'
+		'grunt-contrib-jasmine'
+		'grunt-contrib-sass'
+		'grunt-contrib-watch'
+		'grunt-html2js'
+		'grunt-ngmin'
+	].forEach grunt.loadNpmTasks
 
+	# main build task
+	build = ['ngmin', 'html2js', 'concat', 'clean', 'sass']
+
+	# task defs
 	grunt.initConfig
 
 		clean:
@@ -26,13 +33,14 @@ module.exports = (grunt) ->
 
 		jasmine:
 			test:
-				src: './list-filter-text.js'
+				src: './src/list-filter-text.js'
 				options:
 					specs: './test/test.js'
 					vendor: [
 						'./bower_components/jquery/dist/jquery.js'
 						'./bower_components/angular/angular.js'
 						'./bower_components/angular-mocks/angular-mocks.js'
+						'./dist/template.js'
 					]
 					keepRunner: true
 
@@ -46,5 +54,13 @@ module.exports = (grunt) ->
 				files:
 					'./dist/list-filter-text.css': './src/list-filter-text.scss'
 
-	grunt.registerTask 'default', ['ngmin', 'html2js', 'concat', 'clean', 'sass']
-	grunt.registerTask 'test', ['jasmine']
+		watch:
+			main:
+				files: './src/*'
+				tasks: build
+				options:
+					interrupt: true
+					spawn: false
+
+	grunt.registerTask 'default', build
+	grunt.registerTask 'test', ['html2js', 'jasmine']

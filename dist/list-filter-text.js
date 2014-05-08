@@ -6,16 +6,16 @@ angular.module("list-filter-text.html", []).run(["$templateCache", function($tem
     "	<span class=\"tif-search\"></span>\n" +
     "	<span class=\"tif-delete\" ng-show=\"searchString\" ng-click=\"clearSearch()\"></span>\n" +
     "	<input\n" +
-    "		class=\"input-{{ size }}\"\n" +
     "		type=\"search\"\n" +
-    "		ng-disabled=\"disableExp\"\n" +
+    "		ng-class=\"className\"\n" +
+    "		ng-disabled=\"disabled\"\n" +
     "		ng-model=\"searchString\"\n" +
     "		placeholder=\"{{ placeholder }}\"\n" +
     "	>\n" +
     "	<span\n" +
     "		class=\"press-enter\"\n" +
     "		ng-click=\"updateFilterMap()\"\n" +
-    "		ng-show=\"!typeAhead && searchString && dirty && !loading\"\n" +
+    "		ng-show=\"!typeAhead && dirty && !loading\"\n" +
     "	>Press <kbd>enter</kbd> to search</span>\n" +
     "</form>");
 }]);
@@ -48,10 +48,10 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
       restrict: 'E',
       scope: {
         param: '=',
-        size: '@',
+        className: '=class',
         typeAhead: '=',
         placeholder: '@',
-        disableExp: '='
+        disabled: '='
       },
       templateUrl: 'list-filter-text.html',
       link: function (scope, element) {
@@ -74,7 +74,6 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
           },
           search: function () {
             // TODO: investigate why $timeout is needed here.
-            //       is this an angular bug?
             $timeout(function () {
               scope.param = scope.searchString;
             });
@@ -96,7 +95,7 @@ angular.module('listFilterText', ['listFilterTextTemplate']).constant('KEYS', {
         });
         // TODO: investigate why this doesn't work when
         //       declared in the DOM
-        element.find('input').on('keyup', scope.keyup);
+        element.find('input').on('keyup paste', scope.keyup);
       }
     };
   }

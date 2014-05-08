@@ -32,10 +32,10 @@ angular
 		restrict: 'E',
 		scope: {
 			param: '=',
-			size: '@',
+			className: '=class',
 			typeAhead: '=',
 			placeholder: '@',
-            disableExp: '='
+            disabled: '='
 		},
 		templateUrl: 'list-filter-text.html',
 		link: function (scope, element) {
@@ -80,7 +80,6 @@ angular
 				 */
 				search: function() {
 					// TODO: investigate why $timeout is needed here.
-					//       is this an angular bug?
 					$timeout(function(){
 						scope.param = scope.searchString;
 					});
@@ -109,7 +108,7 @@ angular
 
 			// TODO: investigate why this doesn't work when
 			//       declared in the DOM
-			element.find('input').on('keyup', scope.keyup);
+			element.find('input').on('keyup paste', scope.keyup);
 
 		}
 	};

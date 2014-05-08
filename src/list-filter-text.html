@@ -2,15 +2,15 @@
 	<span class="tif-search"></span>
 	<span class="tif-delete" ng-show="searchString" ng-click="clearSearch()"></span>
 	<input
-		class="input-{{ size }}"
 		type="search"
-		ng-disabled="disableExp"
+		ng-class="className"
+		ng-disabled="disabled"
 		ng-model="searchString"
 		placeholder="{{ placeholder }}"
 	>
 	<span
 		class="press-enter"
 		ng-click="updateFilterMap()"
-		ng-show="!typeAhead && searchString && dirty && !loading"
+		ng-show="!typeAhead && dirty && !loading"
 	>Press <kbd>enter</kbd> to search</span>
 </form>

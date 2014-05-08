@@ -49,3 +49,24 @@ angular
 
 });
 ```
+
+## options
+
+```html
+<list-filter-text
+	<!-- param to update in the model when the user presses ENTER -->
+	param="searchText"
+
+	<!-- css class(es) -->
+	class="size-medium"
+
+	<!-- placeholder text when the input is empty -->
+	placeholder="Search"
+
+	<!-- submit onKeyUp rather than onSubmit -->
+	typeAhead="true"
+
+	<!-- disable the input when this expression evaluates to true -->
+	disabled="foo=true"
+></list-filter-text>
+```
