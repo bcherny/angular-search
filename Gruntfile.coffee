@@ -2,6 +2,7 @@ module.exports = (grunt) ->
 
 	[
 		'grunt-contrib-clean'
+		'grunt-contrib-coffee'
 		'grunt-contrib-concat'
 		'grunt-contrib-jasmine'
 		'grunt-contrib-sass'
@@ -10,14 +11,19 @@ module.exports = (grunt) ->
 		'grunt-ngmin'
 	].forEach grunt.loadNpmTasks
 
-	# main build task
+	# task sets
 	build = ['ngmin', 'html2js', 'concat', 'clean', 'sass']
+	test = ['html2js', 'coffee', 'jasmine']
 
 	# task defs
 	grunt.initConfig
 
 		clean:
 			main: ['./dist/template.js']
+
+		coffee:
+			files:
+				'test/test.js': 'test/test.coffee'
 
 		concat:
 			main:
@@ -63,10 +69,10 @@ module.exports = (grunt) ->
 					spawn: false
 			test:
 				files: './test/*.js'
-				tasks: ['html2js', 'jasmine']
+				tasks: test
 				options:
 					interrupt: true
 					spawn: false
 
 	grunt.registerTask 'default', build
-	grunt.registerTask 'test', ['html2js', 'jasmine']
+	grunt.registerTask 'test', test
