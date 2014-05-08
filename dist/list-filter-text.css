@@ -1,0 +1,200 @@
+[class^="tif-"], [class*=" tif-"] {
+  font-family: "turn-icon-font";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.tif-word-wrap:before {
+  content: "\e601"; }
+
+.tif-visible:before {
+  content: "\e602"; }
+
+.tif-video-channel:before {
+  content: "\e603"; }
+
+.tif-upload:before {
+  content: "\e604"; }
+
+.tif-thumbnail-view:before {
+  content: "\e605"; }
+
+.tif-thumbnail-view-big:before {
+  content: "\e606"; }
+
+.tif-throbber:before {
+  content: "\e607"; }
+
+.tif-star:before {
+  content: "\e608"; }
+
+.tif-spinner:before {
+  content: "\e609"; }
+
+.tif-spinner-small:before {
+  content: "\e60a"; }
+
+.tif-sort-descending:before {
+  content: "\e60b"; }
+
+.tif-sort-ascending:before {
+  content: "\e60c"; }
+
+.tif-social-channel:before {
+  content: "\e60d"; }
+
+.tif-settings:before {
+  content: "\e60e"; }
+
+.tif-settings-light:before {
+  content: "\e60f"; }
+
+.tif-search:before {
+  content: "\e610"; }
+
+.tif-search-small:before {
+  content: "\e611"; }
+
+.tif-pin:before {
+  content: "\e612"; }
+
+.tif-path:before {
+  content: "\e613"; }
+
+.tif-mobile-channel:before {
+  content: "\e614"; }
+
+.tif-list-view:before {
+  content: "\e615"; }
+
+.tif-launch-tab:before {
+  content: "\e616"; }
+
+.tif-fullscreen:before {
+  content: "\e617"; }
+
+.tif-fit-width:before {
+  content: "\e618"; }
+
+.tif-filter:before {
+  content: "\e619"; }
+
+.tif-export:before {
+  content: "\e61a"; }
+
+.tif-expand-down:before {
+  content: "\e61b"; }
+
+.tif-ellispe-view:before {
+  content: "\e61c"; }
+
+.tif-ellipse:before {
+  content: "\e61d"; }
+
+.tif-edit:before {
+  content: "\e61e"; }
+
+.tif-edit-small:before {
+  content: "\e61f"; }
+
+.tif-display-channel:before {
+  content: "\e620"; }
+
+.tif-delete:before {
+  content: "\e621"; }
+
+.tif-context:before {
+  content: "\e622"; }
+
+.tif-column-settings:before {
+  content: "\e623"; }
+
+.tif-column-options:before {
+  content: "\e624"; }
+
+.tif-checkbox-square:before {
+  content: "\e625"; }
+
+.tif-check:before {
+  content: "\e626"; }
+
+.tif-calendar:before {
+  content: "\e627"; }
+
+.tif-arrow-right:before {
+  content: "\e628"; }
+
+.tif-arrow-down:before {
+  content: "\e629"; }
+
+@font-face {
+  font-family: "turn-icon-font";
+  src: url("../bower_components/turn-icon-font/dist/turn-icon-font.eot?-e1bde3");
+  src: url("../bower_components/turn-icon-font/dist/turn-icon-font.eot?#iefix-e1bde3") format("embedded-opentype"), url("../bower_components/turn-icon-font/dist/turn-icon-font.woff?-e1bde3") format("woff"), url("../bower_components/turn-icon-font/dist/turn-icon-font.ttf?-e1bde3") format("truetype"), url("../bower_components/turn-icon-font/dist/turn-icon-font.svg?-e1bde3#turn-icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.list-filter-text {
+  display: inline-block;
+  padding-bottom: 27px;
+  position: relative; }
+  .list-filter-text ::-webkit-input-placeholder {
+    font-style: italic; }
+  .list-filter-text :-moz-placeholder {
+    font-style: italic; }
+  .list-filter-text ::-moz-placeholder {
+    font-style: italic; }
+  .list-filter-text :-ms-input-placeholder {
+    font-style: italic; }
+  .list-filter-text .tif-search {
+    color: #666;
+    font-size: 16px;
+    position: absolute;
+    left: 8px;
+    top: 7px; }
+  .list-filter-text .tif-delete {
+    color: #999;
+    display: block;
+    font-size: 23px;
+    line-height: 31px;
+    position: absolute;
+    right: 5px;
+    top: 0; }
+    .list-filter-text .tif-delete:before {
+      display: block;
+      height: 50px; }
+    .list-filter-text .tif-delete:hover {
+      color: #777; }
+  .list-filter-text label {
+    text-transform: capitalize;
+    display: inline;
+    font-weight: normal;
+    vertical-align: middle; }
+  .list-filter-text input {
+    border: 1px solid #999;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    line-height: 21px;
+    padding: 4px 8px 4px 28px; }
+  .list-filter-text .press-enter {
+    color: #999;
+    display: block;
+    font-size: 12px;
+    line-height: 26px;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    .list-filter-text .press-enter kbd {
+      background: #999;
+      box-shadow: none;
+      cursor: default;
+      text-transform: uppercase; }
+      .list-filter-text .press-enter kbd:hover {
+        background: #888; }

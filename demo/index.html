@@ -6,8 +6,8 @@
 
 	<title>list-filter-text demo</title>
 
-	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="./list-filter-text.css">
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../dist/list-filter-text.css">
 
 	<style>
 
@@ -57,10 +57,8 @@
 
 	<list-filter-text
 		param="searchText"
-		clear-text="clearSearchText"
 		size="medium"
 		placeholder="Search"
-		action="fetch"
 	></list-filter-text>
 
 	<ul class="list-group">
@@ -69,9 +67,9 @@
 		<li class="list-group-item" ng-repeat="result in results">{{ result }}</li>
 	</ul>
 
-	<script src="./bower_components/jquery/dist/jquery.js"></script>
-	<script src="./bower_components/angular/angular.js"></script>
-	<script src="./list-filter-text.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../dist/list-filter-text.js"></script>
 	<script>
 
 		angular

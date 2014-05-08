@@ -11,7 +11,7 @@
   "private": true,
   "dependencies": {
     "angular": "1.0.8",
-    "bootstrap": "~3.1.1",
+    "bootstrap": "3.x.x",
     "jquery": "1.x.x",
     "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/turn-icon-font.git#0.x.x"
   },
