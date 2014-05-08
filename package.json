@@ -1,6 +1,6 @@
 {
   "name": "list-filter-text",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/list-filter-text.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
