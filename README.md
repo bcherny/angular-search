@@ -79,6 +79,16 @@ npm install
 grunt watch
 ```
 
+## running the demo
+
+```bash
+bower install
+npm install
+node server/index
+```
+
+then open demo/index.html in a browser
+
 ## running the tests
 
 ```bash

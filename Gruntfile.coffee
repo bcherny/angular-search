@@ -5,14 +5,14 @@ module.exports = (grunt) ->
 		'grunt-contrib-coffee'
 		'grunt-contrib-concat'
 		'grunt-contrib-jasmine'
-		'grunt-contrib-sass'
+		'grunt-contrib-compass'
 		'grunt-contrib-watch'
 		'grunt-html2js'
 		'grunt-ngmin'
 	].forEach grunt.loadNpmTasks
 
 	# task sets
-	build = ['ngmin', 'html2js', 'concat', 'clean', 'sass']
+	build = ['ngmin', 'html2js', 'concat', 'clean', 'compass']
 	test = ['html2js', 'coffee', 'jasmine']
 
 	# task defs
@@ -55,10 +55,12 @@ module.exports = (grunt) ->
 				src: ['./src/list-filter-text.js']
 				dest: './dist/list-filter-text.js'
 
-		sass:
+		compass:
 			main:
-				files:
-					'./dist/list-filter-text.css': './src/list-filter-text.scss'
+				options:
+					cssDir: 'dist'
+					sassDir: 'src'
+					httpFontsPath: '../bower_components/turn-icon-font/dist'
 
 		watch:
 			main:
