@@ -4,7 +4,7 @@ angular.module("list-filter-text.html", []).run(["$templateCache", function($tem
   $templateCache.put("list-filter-text.html",
     "<form class=\"list-filter-text\">\n" +
     "	<span class=\"tif-search\"></span>\n" +
-    "	<span class=\"tif-delete\" ng-show=\"searchString\" ng-click=\"clearSearch()\"></span>\n" +
+    "	<span class=\"tif-delete\" ng-show=\"searchString\" ng-click=\"clear()\"></span>\n" +
     "	<input\n" +
     "		type=\"search\"\n" +
     "		ng-model=\"searchString\"\n" +
@@ -14,7 +14,7 @@ angular.module("list-filter-text.html", []).run(["$templateCache", function($tem
     "	>\n" +
     "	<span\n" +
     "		class=\"press-enter\"\n" +
-    "		ng-click=\"updateFilterMap()\"\n" +
+    "		ng-click=\"search()\"\n" +
     "		ng-show=\"!typeAhead && dirty && !loading\"\n" +
     "	>Press <kbd>enter</kbd> to search</span>\n" +
     "</form>");

@@ -1,6 +1,6 @@
 <form class="list-filter-text">
 	<span class="tif-search"></span>
-	<span class="tif-delete" ng-show="searchString" ng-click="clearSearch()"></span>
+	<span class="tif-delete" ng-show="searchString" ng-click="clear()"></span>
 	<input
 		type="search"
 		ng-model="searchString"
@@ -10,7 +10,7 @@
 	>
 	<span
 		class="press-enter"
-		ng-click="updateFilterMap()"
+		ng-click="search()"
 		ng-show="!typeAhead && dirty && !loading"
 	>Press <kbd>enter</kbd> to search</span>
 </form>

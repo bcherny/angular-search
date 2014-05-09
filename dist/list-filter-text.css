@@ -1,53 +1,86 @@
+/* line 25, ../src/list-filter-text.scss */
 .list-filter-text {
   display: inline-block;
-  position: relative; }
-  .list-filter-text ::-webkit-input-placeholder {
-    font-style: italic; }
-  .list-filter-text :-moz-placeholder {
-    font-style: italic; }
-  .list-filter-text ::-moz-placeholder {
-    font-style: italic; }
-  .list-filter-text :-ms-input-placeholder {
-    font-style: italic; }
-  .list-filter-text input {
-    border: 1px solid #999;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
-    font-size: 13px;
-    line-height: 21px;
-    padding: 4px 8px 4px 28px;
-    width: 231px; }
-  .list-filter-text .tif-search {
-    color: #666;
-    font-size: 16px;
-    position: absolute;
-    left: 8px;
-    top: 7px; }
-  .list-filter-text .tif-delete {
-    color: #999;
-    display: block;
-    font-size: 23px;
-    line-height: 31px;
-    position: absolute;
-    right: 5px;
-    top: 0; }
-    .list-filter-text .tif-delete:before {
-      display: block;
-      height: 50px; }
-    .list-filter-text .tif-delete:hover {
-      color: #777; }
-  .list-filter-text .press-enter {
-    color: #999;
-    display: block;
-    font-size: 12px;
-    line-height: 26px;
-    position: absolute;
-    bottom: 0;
-    right: 0; }
-    .list-filter-text .press-enter kbd {
-      background: #999;
-      box-shadow: none;
-      cursor: default;
-      text-transform: uppercase; }
-      .list-filter-text .press-enter kbd:hover {
-        background: #888; }
+  position: relative;
+}
+/* line 17, ../src/list-filter-text.scss */
+.list-filter-text ::-webkit-input-placeholder {
+  font-style: italic;
+}
+/* line 18, ../src/list-filter-text.scss */
+.list-filter-text :-moz-placeholder {
+  font-style: italic;
+}
+/* line 19, ../src/list-filter-text.scss */
+.list-filter-text ::-moz-placeholder {
+  font-style: italic;
+}
+/* line 20, ../src/list-filter-text.scss */
+.list-filter-text :-ms-input-placeholder {
+  font-style: italic;
+}
+/* line 34, ../src/list-filter-text.scss */
+.list-filter-text input {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  line-height: 21px;
+  padding: 3px 6px;
+  padding-left: 28px;
+  width: 231px;
+}
+/* line 44, ../src/list-filter-text.scss */
+.list-filter-text input:focus {
+  outline: none;
+  border-color: #5e9ed6;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 10px #5e9ed6;
+}
+/* line 53, ../src/list-filter-text.scss */
+.list-filter-text .tif-search {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  position: absolute;
+  left: 8px;
+  top: 7px;
+}
+/* line 62, ../src/list-filter-text.scss */
+.list-filter-text .tif-delete {
+  color: #bbbbbb;
+  display: block;
+  font-size: 22px;
+  line-height: 31px;
+  position: absolute;
+  right: 4px;
+  top: 0;
+}
+/* line 71, ../src/list-filter-text.scss */
+.list-filter-text .tif-delete:before {
+  display: block;
+  height: 50px;
+}
+/* line 76, ../src/list-filter-text.scss */
+.list-filter-text .tif-delete:hover {
+  color: #aeaeae;
+}
+/* line 82, ../src/list-filter-text.scss */
+.list-filter-text .press-enter {
+  color: #bbbbbb;
+  display: block;
+  font-size: 11px;
+  line-height: 26px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* line 91, ../src/list-filter-text.scss */
+.list-filter-text .press-enter kbd {
+  background: #bbbbbb;
+  box-shadow: none;
+  cursor: default;
+  text-transform: uppercase;
+}
+/* line 97, ../src/list-filter-text.scss */
+.list-filter-text .press-enter kbd:hover {
+  background: #aeaeae;
+}
