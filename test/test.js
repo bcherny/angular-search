@@ -35,7 +35,7 @@ describe('list-filter-text', function() {
         return function($compile, $rootScope, $controller) {
           _this.$compile = $compile;
           _this.scope = $rootScope.$new();
-          return _this.element = angular.element("<list-filter-text\n	class=\"size-medium\"\n	param=\"searchText\"\n	placeholder=\"Search\"\n	typeAhead=\"false\"\n	disabled=\"true\"\n></list-filter-text>");
+          return _this.element = angular.element("<list-filter-text\n	class=\"size-medium\"\n	param=\"searchText\"\n	placeholder=\"Search\"\n	typeAhead=\"false\"\n	disabled=\"foo\"\n></list-filter-text>");
         };
       })(this));
     });
@@ -50,6 +50,14 @@ describe('list-filter-text', function() {
     it('should set the element\'s placeholder to the "placeholder" attribute', function() {
       return expect(this.element.find('input').attr('placeholder')).toBe('Search');
     });
+    it('should set the element\'s disabled attribute to true when the disabled expression is truthy', inject(function($rootScope) {
+      $rootScope.foo = 1;
+      this.scope.$apply();
+      expect(this.element.find('input').attr('disabled')).toBe('disabled');
+      $rootScope.foo = false;
+      this.scope.$apply();
+      return expect(this.element.find('input').attr('disabled')).toBe(void 0);
+    }));
     describe('#change', function() {
       it('should call #search if the user pressed ENTER', function() {
         spyOn(this.scope, 'search');

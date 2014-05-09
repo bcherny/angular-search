@@ -55,7 +55,7 @@ describe 'list-filter-text', ->
 						param="searchText"
 						placeholder="Search"
 						typeAhead="false"
-						disabled="true"
+						disabled="foo"
 					></list-filter-text>
 				"""
 
@@ -77,6 +77,23 @@ describe 'list-filter-text', ->
 
 			expect @element.find('input').attr 'placeholder'
 			.toBe 'Search'
+
+		it 'should set the element\'s disabled attribute to true when the disabled expression is truthy', inject ($rootScope) ->
+
+			$rootScope.foo = 1;
+
+			do @scope.$apply
+
+			expect @element.find('input').attr 'disabled'
+			.toBe 'disabled'
+
+			$rootScope.foo = false
+
+			do @scope.$apply
+
+			expect @element.find('input').attr 'disabled'
+			.toBe undefined
+
 
 		describe '#change', ->
 
