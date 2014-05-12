@@ -82,9 +82,16 @@ describe('list-filter-text', function() {
         });
         return expect(this.scope.search).not.toHaveBeenCalled();
       });
-      it('should call #clear and #blur if the user pressed ESC', function() {
+      it('should call #clear and #blur if the user pressed ESC, regardless of typeAhead', function() {
+        this.scope.typeAhead = true;
         spyOn(this.scope, 'clear');
         spyOn(this.scope, 'blur');
+        this.scope.change({
+          keyCode: 27
+        });
+        expect(this.scope.blur).toHaveBeenCalled();
+        expect(this.scope.clear).toHaveBeenCalled();
+        this.scope.typeAhead = false;
         this.scope.change({
           keyCode: 27
         });

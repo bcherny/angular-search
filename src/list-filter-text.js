@@ -65,11 +65,11 @@ angular
 				change: function(e) {
 					var code = e.keyCode || e.which;
 
-					if (scope.typeAhead || code === KEYS.enter) {
-						scope.search();
-					} else if (code === KEYS.esc) {
+					if (code === KEYS.esc) {
 						scope.clear();
 						scope.blur();
+					} else if (code === KEYS.enter || scope.typeAhead) {
+						scope.search();
 					} else {
 						scope.dirty = true;
 					}

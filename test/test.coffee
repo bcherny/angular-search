@@ -131,7 +131,9 @@ describe 'list-filter-text', ->
 				do expect @scope.search
 				.not.toHaveBeenCalled
 
-			it 'should call #clear and #blur if the user pressed ESC', ->
+			it 'should call #clear and #blur if the user pressed ESC, regardless of typeAhead', ->
+
+				@scope.typeAhead = true
 
 				spyOn @scope, 'clear'
 				spyOn @scope, 'blur'
@@ -144,6 +146,19 @@ describe 'list-filter-text', ->
 
 				do expect @scope.clear
 				.toHaveBeenCalled
+
+				@scope.typeAhead = false
+
+				@scope.change
+					keyCode: 27
+
+				do expect @scope.blur
+				.toHaveBeenCalled
+
+				do expect @scope.clear
+				.toHaveBeenCalled
+
+
 
 			it 'should call not #clear or #blur otherwise', ->
 
