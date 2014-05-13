@@ -8,9 +8,17 @@ a simple search directive
 ## dependencies
 
 - angular 1.0.8
-- bootstrap 3.x.x
-- jquery 1.x.x
-- turn-icon-font 0.x.x
+- bootstrap 3.1+
+- jquery 1.11+
+- turn-icon-font 0.3+
+
+## features
+
+- lightweight
+- configurable behavior
+- supports both basic (click on affordances) and pro user (keyboard-only) interactions
+- supports any number of directive instances on one page
+- near-100% test coverage
 
 ## installation
 
@@ -23,9 +31,10 @@ bower install ssh://git@stash.turn.com:7999/cnsl/list-filter-text.git#0.x.x
 ```html
 <div ng-controller="mainCtrl">
 	<list-filter-text
+		class="size-medium"
 		param="searchText"
-		size="medium"
 		placeholder="Search"
+		search="search($param)"
 	></list-filter-text>
 	<a ng-click="clear()">Clear</a>
 </div>
@@ -34,17 +43,19 @@ bower install ssh://git@stash.turn.com:7999/cnsl/list-filter-text.git#0.x.x
 ```js
 angular
 .module('demo', ['listFilterText'])
-.controller('mainCtrl', function ($scope, $http, listFilterTextApi) {
+.controller('mainCtrl', function ($scope, $http) {
 
 	angular.extend($scope, {
 		searchText: '',
-		clear: listFilterTextApi.clear
-	});
+		clear: function() {
+			$scope.searchText = '';
+			$scope.search();
+		},
+		search: function (param) {
 
-	$scope.$watch('searchText', function (text) {
+			...
 
-		...
-
+		}
 	});
 
 });
@@ -54,20 +65,26 @@ angular
 
 ```html
 <list-filter-text
-	<!-- param to update in the model when the user presses ENTER -->
-	param="searchText"
-
 	<!-- css class(es) -->
 	class="size-medium"
+
+	<!-- disable the input when $scope.foo evaluates to true -->
+	disabled="foo"
+
+	<!-- param to update in the model when the user presses ENTER -->
+	param="searchText"
 
 	<!-- placeholder text when the input is empty -->
 	placeholder="Search"
 
+	<!--
+		search function to call (passed the search string),
+		should be defined on the controller's $scope
+	-->
+	search="fn($param)"
+
 	<!-- submit onKeyUp rather than onSubmit -->
 	typeAhead="true"
-
-	<!-- disable the input when $scope.foo evaluates to true -->
-	disabled="foo"
 ></list-filter-text>
 ```
 
