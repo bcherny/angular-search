@@ -1,7 +1,7 @@
 {
-  "name": "list-filter-text",
+  "name": "search",
   "version": "0.0.1",
-  "main": "./dist/list-filter-text.js",
+  "main": "./dist/search.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",

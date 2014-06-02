@@ -18,6 +18,8 @@ module.exports = (grunt) ->
 	# task defs
 	grunt.initConfig
 
+		pkg: grunt.file.readJSON 'package.json'
+
 		clean:
 			main: ['./dist/template.js']
 
@@ -27,19 +29,19 @@ module.exports = (grunt) ->
 
 		concat:
 			main:
-				src: ['./dist/template.js', './dist/list-filter-text.js']
-				dest: './dist/list-filter-text.js'
+				src: ['./dist/template.js', './dist/<%= pkg.name %>.js']
+				dest: './dist/<%= pkg.name %>.js'
 
 		html2js:
 			main:
 				src: './src/*.html'
 				dest: './dist/template.js'
 			options:
-				module: 'listFilterTextTemplate'
+				module: 'turn/searchTemplate'
 
 		jasmine:
 			test:
-				src: './src/list-filter-text.js'
+				src: './src/<%= pkg.name %>.js'
 				options:
 					specs: './test/test.js'
 					vendor: [
@@ -52,8 +54,8 @@ module.exports = (grunt) ->
 
 		ngmin:
 			main:
-				src: ['./src/list-filter-text.js']
-				dest: './dist/list-filter-text.js'
+				src: ['./src/<%= pkg.name %>.js']
+				dest: './dist/<%= pkg.name %>.js'
 
 		compass:
 			main:

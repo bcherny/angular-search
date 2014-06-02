@@ -4,11 +4,11 @@
 
 	<meta charset="utf-8">
 
-	<title>list-filter-text demo</title>
+	<title>search demo</title>
 
 	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="../dist/turn-icon-font.css">
-	<link rel="stylesheet" href="../dist/list-filter-text.css">
+	<link rel="stylesheet" href="../dist/search.css">
 
 	<style>
 
@@ -22,11 +22,11 @@
 			display: block;
 		}
 
-		.list-filter-text {
+		.search {
 			padding-bottom: 27px;
 		}
 
-		.list-filter-text input,
+		.search input,
 		.list-group {
 			width: 500px;
 		}
@@ -68,12 +68,12 @@
 
 		<a ng-click="clear()">Clear</a>
 
-		<list-filter-text
+		<search
 			param="searchText"
 			search="search($param)"
 			class="size-medium"
 			placeholder="Search countries"
-		></list-filter-text>
+		></search>
 
 		<ul class="list-group">
 			<li class="list-group-item loading" ng-show="loading"></li>
@@ -86,12 +86,12 @@
 
 		<a ng-click="clear()">Clear</a>
 
-		<list-filter-text
+		<search
 			param="searchText"
 			search="search($param)"
 			class="size-medium"
 			placeholder="Search states"
-		></list-filter-text>
+		></search>
 
 		<ul class="list-group">
 			<li class="list-group-item loading" ng-show="loading"></li>
@@ -103,11 +103,11 @@
 
 	<script src="../bower_components/jquery/dist/jquery.js"></script>
 	<script src="../bower_components/angular/angular.js"></script>
-	<script src="../dist/list-filter-text.js"></script>
+	<script src="../dist/search.js"></script>
 	<script>
 
 		angular
-		.module('demo', ['listFilterText'])
+		.module('demo', ['turn/search'])
 		.controller('countryCtrl', function ($scope, $http) {
 
 			angular.extend($scope, {

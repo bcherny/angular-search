@@ -1,7 +1,7 @@
 {
-  "name": "list-filter-text",
+  "name": "search",
   "version": "0.0.1",
-  "main": "./dist/list-filter-text.js",
+  "main": "./dist/search.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
@@ -13,7 +13,7 @@
     "angular": "1.0.8",
     "bootstrap": "^3.1",
     "jquery": "^1.11",
-    "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/turn-icon-font.git#^0.3"
+    "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/search#^0.3"
   },
   "devDependencies": {
     "angular-mocks": "1.0.8"

@@ -1,6 +1,6 @@
-describe 'list-filter-text', ->
+describe 'search', ->
 
-	KEYS =
+	SEARCH_KEYS =
 		enter: 13,
 		esc: 27
 
@@ -8,10 +8,9 @@ describe 'list-filter-text', ->
 		@clear = ->
 		@reset = ->
 
-	beforeEach (module 'listFilterText'), ($provide) ->
+	beforeEach (module 'turn/search'), ($provide) ->
 		
-		$provide.value 'KEYS', KEYS
-		$provide.value 'listFilterTextApi', listFilterTextApi
+		$provide.value 'SEARCH_KEYS', SEARCH_KEYS
 	
 	beforeEach ->
 
@@ -20,14 +19,14 @@ describe 'list-filter-text', ->
 			@scope = do $rootScope.$new
 
 			@element = angular.element """
-				<list-filter-text
+				<search
 					class="size-medium"
 					param="searchText"
 					placeholder="Search"
 					search="search($param)"
 					typeAhead="false"
 					disabled="foo"
-				></list-filter-text>
+				></search>
 			"""
 
 	beforeEach ->

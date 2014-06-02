@@ -1,9 +1,9 @@
-list-filter-text directive
+search directive
 ==========================
 
 a simple search directive
 
-![screenshot](https://stash.turn.com/projects/CNSL/repos/list-filter-text/browse/screenie.png?raw&at=alpha)
+![screenshot](https://stash.turn.com/projects/CNSL/repos/search/browse/screenie.png?raw)
 
 ## dependencies
 
@@ -23,26 +23,26 @@ a simple search directive
 ## installation
 
 ```bash
-bower install ssh://git@stash.turn.com:7999/cnsl/list-filter-text.git#0.x.x
+bower install ssh://git@stash.turn.com:7999/cnsl/search.git
 ```
 
 ## usage
 
 ```html
 <div ng-controller="mainCtrl">
-	<list-filter-text
+	<search
 		class="size-medium"
 		param="searchText"
 		placeholder="Search"
 		search="search($param)"
-	></list-filter-text>
+	></search>
 	<a ng-click="clear()">Clear</a>
 </div>
 ```
 
 ```js
 angular
-.module('demo', ['listFilterText'])
+.module('demo', ['turn/search'])
 .controller('mainCtrl', function ($scope, $http) {
 
 	angular.extend($scope, {
@@ -64,7 +64,7 @@ angular
 ## options
 
 ```html
-<list-filter-text
+<search
 	<!-- css class(es) -->
 	class="size-medium"
 
@@ -85,7 +85,7 @@ angular
 
 	<!-- submit onKeyUp rather than onSubmit -->
 	typeAhead="true"
-></list-filter-text>
+></search>
 ```
 
 ## hacking on it
