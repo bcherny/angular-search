@@ -1,6 +1,6 @@
 {
   "name": "search",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/search.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
