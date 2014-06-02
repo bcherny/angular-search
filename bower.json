@@ -13,7 +13,7 @@
     "angular": "1.0.8",
     "bootstrap": "^3.1",
     "jquery": "^1.11",
-    "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/search#^0.3"
+    "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/turn-icon-font.git#~0"
   },
   "devDependencies": {
     "angular-mocks": "1.0.8"
