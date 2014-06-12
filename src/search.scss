@@ -32,21 +32,7 @@ $focus-ring-color: rgb(94, 158, 214);
 	}
 
 	input {
-		border: 1px solid $input-border-color;
-		border-radius: $input-border-radius;
-		box-shadow: $input-box-shadow;
-		font-size: $input-font-size;
-		line-height: $input-line-height;
-		padding: $input-padding;
 		padding-left: 28px;
-		width: $input-width;
-
-		&:focus {
-			outline: none;
-			border-color: $focus-ring-color;
-			box-shadow: $input-box-shadow,
-						0 0 10px $focus-ring-color;
-		}
 	}
 
 	// loupe icon
