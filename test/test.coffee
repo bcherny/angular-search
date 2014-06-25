@@ -65,6 +65,29 @@ describe 'search', ->
 		.toBe undefined
 
 
+	describe '#blur', ->
+
+		it 'should blur the input', ->
+
+			mock =
+				blur: ->
+
+			spyOn mock, 'blur'
+
+			do spyOn (do $).__proto__, 'find'
+			.andReturn mock
+
+			do @scope.blur
+
+			expect (do $).__proto__.find
+			.toHaveBeenCalledWith 'input'
+
+			expect mock.blur
+			.toHaveBeenCalledWith
+
+		# element.find('input').blur();
+
+
 	describe '#change', ->
 
 		it 'should call #update if the user pressed ENTER', ->

@@ -40,6 +40,21 @@ module.exports = (grunt) ->
 				module: 'turn/searchTemplate'
 
 		jasmine:
+			coverage:
+				src: ['./dist/<%= pkg.name %>.js']
+				options:
+					specs: ['./test/test.js']
+					template: require 'grunt-template-jasmine-istanbul'
+					templateOptions:
+						coverage: 'bin/coverage/coverage.json'
+						report: 'bin/coverage'
+					vendor: [
+						'./bower_components/jquery/dist/jquery.js'
+						'./bower_components/angular/angular.js'
+						'./bower_components/angular-mocks/angular-mocks.js'
+						'./dist/template.js'
+					]
+
 			test:
 				src: './src/<%= pkg.name %>.js'
 				options:

@@ -40,6 +40,19 @@ describe('search', function() {
     this.scope.$apply();
     return expect(this.element.find('input').attr('disabled')).toBe(void 0);
   }));
+  describe('#blur', function() {
+    return it('should blur the input', function() {
+      var mock;
+      mock = {
+        blur: function() {}
+      };
+      spyOn(mock, 'blur');
+      spyOn(($()).__proto__, 'find').andReturn(mock)();
+      this.scope.blur();
+      expect(($()).__proto__.find).toHaveBeenCalledWith('input');
+      return expect(mock.blur).toHaveBeenCalledWith;
+    });
+  });
   describe('#change', function() {
     it('should call #update if the user pressed ENTER', function() {
       spyOn(this.scope, 'update');
