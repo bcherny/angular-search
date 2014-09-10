@@ -3,7 +3,7 @@ angular.module('turn/searchTemplate', ['search.html']);
 angular.module("search.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("search.html",
     "<form class=\"search\">\n" +
-    "	<span class=\"tif-search\"></span>\n" +
+    "	<span class=\"tif-search\" ng-click=\"update()\"></span>\n" +
     "	<span class=\"tif-delete\" ng-show=\"param\" ng-click=\"clear()\"></span>\n" +
     "	<input\n" +
     "		type=\"search\"\n" +
