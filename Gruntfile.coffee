@@ -5,14 +5,14 @@ module.exports = (grunt) ->
 		'grunt-contrib-coffee'
 		'grunt-contrib-concat'
 		'grunt-contrib-jasmine'
-		'grunt-contrib-compass'
+		'grunt-contrib-sass'
 		'grunt-contrib-watch'
 		'grunt-html2js'
 		'grunt-ngmin'
 	].forEach grunt.loadNpmTasks
 
 	# task sets
-	build = ['ngmin', 'html2js', 'concat', 'clean', 'compass']
+	build = ['ngmin', 'html2js', 'concat', 'clean', 'sass']
 	test = ['html2js', 'coffee', 'jasmine']
 
 	# task defs
@@ -37,7 +37,7 @@ module.exports = (grunt) ->
 				src: './src/*.html'
 				dest: './dist/template.js'
 			options:
-				module: 'turn/searchTemplate'
+				module: 'turn/search/template'
 
 		jasmine:
 			coverage:
@@ -72,12 +72,10 @@ module.exports = (grunt) ->
 				src: ['./src/<%= pkg.name %>.js']
 				dest: './dist/<%= pkg.name %>.js'
 
-		compass:
+		sass:
 			main:
-				options:
-					cssDir: 'dist'
-					sassDir: 'src'
-					httpFontsPath: '../bower_components/turn-icon-font/dist'
+				files:
+					'dist/search.css': 'src/search.scss'
 
 		watch:
 			main:
