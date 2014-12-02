@@ -1,7 +1,9 @@
 {
-  "name": "search",
-  "version": "0.0.6",
+  "name": "angular-search",
+  "version": "0.1.0",
   "main": "./dist/search.js",
+  "description": "A lightweight Angular search widget",
+  "keywords": ["search", "autocomplete", "typeahead", "angular", "ng", "input", "text", "form"],
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
