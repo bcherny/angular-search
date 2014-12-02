@@ -3,7 +3,16 @@
   "version": "0.1.0",
   "main": "./dist/search.js",
   "description": "A lightweight Angular search widget",
-  "keywords": ["search", "autocomplete", "typeahead", "angular", "ng", "input", "text", "form"],
+  "keywords": [
+    "search",
+    "autocomplete",
+    "typeahead",
+    "angular",
+    "ng",
+    "input",
+    "text",
+    "form"
+  ],
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
@@ -23,6 +32,7 @@
     "grunt-contrib-jasmine": "^0.5.2",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-coveralls": "^1.0.0",
     "grunt-html2js": "^0.2.4",
     "grunt-ngmin": "0.0.3",
     "grunt-template-jasmine-istanbul": "^0.2.6",
