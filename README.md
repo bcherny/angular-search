@@ -1,7 +1,6 @@
-search directive
-==========================
+# angular-search
 
-a simple search directive
+A lightweight Angular search widget
 
 ![screenshot](https://raw.githubusercontent.com/turn/angular-search/master/screenie.png)
 
@@ -13,8 +12,10 @@ a simple search directive
 
 - lightweight
 - configurable behavior
-- supports both basic (click on affordances) and pro user (keyboard-only) interactions
-- supports any number of directive instances on one page
+- supports both basic and pro user interactions
+	- Click the loupe icon, press the word "Enter", or press the [ENTER] key to search
+	- Press the "x" icon, or press the [ESC] key to clear a search
+- supports any number of search instances on one page
 - 100% test coverage
 
 ## installation
@@ -44,7 +45,7 @@ npm install --save angular-search
 ```js
 angular
 .module('demo', ['turn/search'])
-.controller('mainCtrl', function ($scope, $http) {
+.controller('mainCtrl', function ($scope) {
 
 	angular.extend($scope, {
 		searchText: '',
