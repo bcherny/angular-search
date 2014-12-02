@@ -9,6 +9,9 @@
     "Chris Zheng <czheng@turn.com>",
     "Boris Cherny <bcherny@turn.com>"
   ],
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
   "license": "Apache2",
   "devDependencies": {
     "cors": "~2.2.0",

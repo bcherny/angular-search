@@ -1,4 +1,4 @@
-# angular-search
+# angular-search [![Build Status](https://travis-ci.org/turn/angular-search.svg?branch=master)](https://travis-ci.org/turn/angular-search) [![Coverage Status](https://img.shields.io/coveralls/turn/angular-search.svg)](https://coveralls.io/r/turn/angular-search)
 
 A lightweight Angular search widget
 

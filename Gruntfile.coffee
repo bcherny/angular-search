@@ -7,13 +7,15 @@ module.exports = (grunt) ->
 		'grunt-contrib-jasmine'
 		'grunt-contrib-sass'
 		'grunt-contrib-watch'
+		'grunt-coveralls'
 		'grunt-html2js'
 		'grunt-ngmin'
 	].forEach grunt.loadNpmTasks
 
 	# task sets
 	build = ['ngmin', 'html2js', 'concat', 'clean', 'sass']
-	test = ['html2js', 'coffee', 'jasmine']
+	test = ['html2js', 'coffee', 'jasmine:unit']
+	coverage = ['html2js', 'coffee', 'jasmine:coverage']
 
 	# task defs
 	grunt.initConfig
@@ -32,6 +34,12 @@ module.exports = (grunt) ->
 				src: ['./dist/template.js', './dist/<%= pkg.name %>.js']
 				dest: './dist/<%= pkg.name %>.js'
 
+		coveralls:
+			options:
+				force: true
+			main:
+				src: 'reports/lcov/lcov.json'
+
 		html2js:
 			main:
 				src: './src/*.html'
@@ -41,29 +49,39 @@ module.exports = (grunt) ->
 
 		jasmine:
 			coverage:
-				src: ['./dist/<%= pkg.name %>.js']
+				src: ['./dist/search.js']
 				options:
 					specs: ['./test/test.js']
 					template: require 'grunt-template-jasmine-istanbul'
 					templateOptions:
-						coverage: 'bin/coverage/coverage.json'
-						report: 'bin/coverage'
+						coverage: 'reports/lcov/lcov.json'
+						report: [
+							{
+								type: 'html'
+								options:
+									dir: 'reports/html'
+							}
+							{
+								type: 'lcov'
+								options:
+									dir: 'reports/lcov'
+							}
+						]
+					type: 'lcovonly'
 					vendor: [
 						'./bower_components/jquery/dist/jquery.js'
 						'./bower_components/angular/angular.js'
 						'./bower_components/angular-mocks/angular-mocks.js'
-						'./dist/template.js'
 					]
 
-			test:
-				src: './src/<%= pkg.name %>.js'
+			unit:
+				src: './dist/search.js'
 				options:
 					specs: './test/test.js'
 					vendor: [
 						'./bower_components/jquery/dist/jquery.js'
 						'./bower_components/angular/angular.js'
 						'./bower_components/angular-mocks/angular-mocks.js'
-						'./dist/template.js'
 					]
 					keepRunner: true
 
@@ -93,3 +111,4 @@ module.exports = (grunt) ->
 
 	grunt.registerTask 'default', build
 	grunt.registerTask 'test', test
+	grunt.registerTask 'coverage', coverage

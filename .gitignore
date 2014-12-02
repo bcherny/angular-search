@@ -5,6 +5,6 @@ Gruntfile.js
 _SpecRunner.html
 bower_components
 node_modules
-bin
+reports
 search.css.map
 dist/template.js
