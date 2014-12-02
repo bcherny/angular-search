@@ -3,7 +3,7 @@ search directive
 
 a simple search directive
 
-![screenshot](https://stash.turn.com/projects/CNSL/repos/search/browse/screenie.png?raw)
+![screenshot](https://raw.githubusercontent.com/turn/angular-search/master/screenie.png)
 
 ## dependencies
 
@@ -20,7 +20,11 @@ a simple search directive
 ## installation
 
 ```bash
-bower install ssh://git@stash.turn.com:7999/cnsl/search.git
+# using bower:
+bower install --save angular-search
+
+# .. or, using NPM:
+npm install --save angular-search
 ```
 
 ## usage
