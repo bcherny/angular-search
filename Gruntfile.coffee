@@ -38,7 +38,7 @@ module.exports = (grunt) ->
 			options:
 				force: true
 			main:
-				src: 'reports/lcov/lcov.json'
+				src: 'reports/lcov/lcov.info'
 
 		html2js:
 			main:
