@@ -7,10 +7,7 @@ a simple search directive
 
 ## dependencies
 
-- angular 1.0.8
-- bootstrap 3.1+
-- jquery 1.11+
-- turn-icon-font 0.3+
+- angular 1.x
 
 ## features
 
@@ -18,7 +15,7 @@ a simple search directive
 - configurable behavior
 - supports both basic (click on affordances) and pro user (keyboard-only) interactions
 - supports any number of directive instances on one page
-- near-100% test coverage
+- 100% test coverage
 
 ## installation
 

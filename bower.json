@@ -1,21 +1,19 @@
 {
   "name": "search",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./dist/search.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
     "Boris Cherny <bcherny@turn.com>"
   ],
-  "license": "private",
-  "private": true,
+  "license": "Apache2",
   "dependencies": {
-    "angular": "1.0.8",
-    "bootstrap": "^3.1",
-    "jquery": "^1.11",
-    "turn-icon-font": "ssh://git@stash.turn.com:7999/cnsl/turn-icon-font.git#~0"
+    "angular": "1.0 - 1.1",
+    "jquery": "*"
   },
   "devDependencies": {
-    "angular-mocks": "1.0.8"
+    "angular-mocks": "1.0 - 1.1",
+    "bootstrap": "^3.1"
   }
 }

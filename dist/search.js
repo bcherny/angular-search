@@ -1,10 +1,10 @@
-angular.module('turn/searchTemplate', ['search.html']);
+angular.module('turn/search/template', ['search.html']);
 
 angular.module("search.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("search.html",
     "<form class=\"search\">\n" +
-    "	<span class=\"tif-search\" ng-click=\"update()\"></span>\n" +
-    "	<span class=\"tif-delete\" ng-show=\"param\" ng-click=\"clear()\"></span>\n" +
+    "	<span class=\"turn-search\" ng-click=\"update()\"></span>\n" +
+    "	<span class=\"turn-clear\" ng-show=\"param\" ng-click=\"clear()\"></span>\n" +
     "	<input\n" +
     "		type=\"search\"\n" +
     "		ng-model=\"param\"\n" +
@@ -28,7 +28,7 @@ angular.module("search.html", []).run(["$templateCache", function($templateCache
  *   Chris Zheng <czheng@turn.com>
  *   Boris Cherny <bcherny@turn.com>
  */
-angular.module('turn/search', ['turn/searchTemplate']).constant('SEARCH_KEYS', {
+angular.module('turn/search', ['turn/search/template']).constant('SEARCH_KEYS', {
   enter: 13,
   esc: 27
 }).directive('search', [

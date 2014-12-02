@@ -1,23 +1,22 @@
 {
   "name": "search",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./dist/search.js",
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
     "Boris Cherny <bcherny@turn.com>"
   ],
-  "license": "private",
-  "private": true,
+  "license": "Apache2",
   "devDependencies": {
     "cors": "~2.2.0",
     "express": "~4.1.1",
     "grunt": "~0.4.4",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-coffee": "^0.10.1",
-    "grunt-contrib-compass": "^0.7.2",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-jasmine": "^0.5.2",
+    "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-html2js": "^0.2.4",
     "grunt-ngmin": "0.0.3",

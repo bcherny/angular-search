@@ -8,7 +8,7 @@
  */
 
 angular
-.module('turn/search', ['turn/searchTemplate'])
+.module('turn/search', ['turn/search/template'])
 .constant('SEARCH_KEYS', {
 	enter: 13,
 	esc: 27
@@ -22,8 +22,8 @@ angular
 			class: '@',
 			typeAhead: '=',
 			placeholder: '@',
-            disabled: '=',
-            search: '&'
+			disabled: '=',
+			search: '&'
 		},
 		templateUrl: 'search.html',
 		link: function (scope, element, attrs) {
