@@ -1,8 +1,8 @@
-# angular-search [![Build Status](https://travis-ci.org/turn/angular-search.svg?branch=master)](https://travis-ci.org/turn/angular-search) [![Coverage Status](https://img.shields.io/coveralls/turn/angular-search.svg)](https://coveralls.io/r/turn/angular-search)
+# angular-search [![Build Status](https://travis-ci.org/bcherny/angular-search.svg?branch=master)](https://travis-ci.org/bcherny/angular-search) [![Coverage Status](https://img.shields.io/coveralls/bcherny/angular-search.svg)](https://coveralls.io/r/bcherny/angular-search)
 
 A lightweight Angular search widget
 
-![screenshot](https://raw.githubusercontent.com/turn/angular-search/master/screenie.png)
+![screenshot](https://raw.githubusercontent.com/bcherny/angular-search/master/screenie.png)
 
 ## dependencies
 

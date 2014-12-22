@@ -1,6 +1,6 @@
 {
   "name": "angular-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/search.js",
   "description": "A lightweight Angular search widget",
   "keywords": [
@@ -16,7 +16,7 @@
   "authors": [
     "Hanna Hoang <hhoang@turn.com>",
     "Chris Zheng <czheng@turn.com>",
-    "Boris Cherny <bcherny@turn.com>"
+    "Boris Cherny <boris@performancejs.com>"
   ],
   "scripts": {
     "test": "grunt test --verbose"
