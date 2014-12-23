@@ -1,4 +1,7 @@
-# angular-search [![Build Status](https://travis-ci.org/bcherny/angular-search.svg?branch=master)](https://travis-ci.org/bcherny/angular-search) [![Coverage Status](https://img.shields.io/coveralls/bcherny/angular-search.svg)](https://coveralls.io/r/bcherny/angular-search)
+# angular-search [![Build Status][build]](https://travis-ci.org/bcherny/angular-search) [![Coverage Status][coverage]](https://coveralls.io/r/bcherny/angular-search)
+
+[build]: https://img.shields.io/travis/bcherny/angular-search.svg?branch=master&style=flat-square
+[coverage]: http://img.shields.io/coveralls/bcherny/angular-search.svg?branch=master&style=flat-square
 
 A lightweight Angular search widget
 
