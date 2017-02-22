@@ -203,6 +203,28 @@ describe 'search', ->
 			expect @scope.dirty
 			.toBe false
 
+		it 'should set scope.searchValidation to true', ->
+
+			@scope.param = '1'
+
+			@scope.minSearchLength = 2
+
+			do scope.update
+
+			expect @scope.searchValidation
+			/toBe true
+
+		it 'should set scope.searchValidation to false', ->
+
+			@scope.param = '11'
+
+			@scope.minSearchLength = 2
+
+			do scope.update
+
+			expect @scope.searchValidation
+			/toBe false
+
 
 	describe '#clear', ->
 

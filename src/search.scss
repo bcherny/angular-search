@@ -32,6 +32,15 @@ $image-clear: "<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M17.499,8.583
 		padding-left: 28px;
 	}
 
+	.error-label {
+		display: block;
+		color: #ff0000;
+	}
+
+	input[type=search].input-error {
+		border: 1px solid #ff0000;
+	}
+
 	// loupe icon
 	.turn-search {
 		background: url("data:image/svg+xml;utf8," + $image-search) 0 0 no-repeat;
