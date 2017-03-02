@@ -119,10 +119,22 @@ describe('search', function() {
       this.scope.update();
       return expect($rootScope.search).toHaveBeenCalledWith(this.scope.param);
     }));
-    return it('should set scope.dirty to false', function() {
+    it('should set scope.dirty to false', function() {
       this.scope.dirty = true;
       this.scope.update();
       return expect(this.scope.dirty).toBe(false);
+    });
+    it('should set scope.searchValidation to true', function() {
+      this.scope.minSearchLength = 2;
+      this.scope.param = '1';
+      this.scope.update();
+      return expect(this.scope.searchValidation).toBe(true);
+    });
+  return it('should set scope.searchValidation to false', function() {
+      this.scope.minSearchLength = 2;
+      this.scope.param = '11';
+      this.scope.update();
+      return expect(this.scope.searchValidation).toBe(false);
     });
   });
   return describe('#clear', function() {

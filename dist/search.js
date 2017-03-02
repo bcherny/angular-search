@@ -9,6 +9,7 @@ angular.module("search.html", []).run(["$templateCache", function($templateCache
     "		type=\"search\"\n" +
     "		ng-model=\"param\"\n" +
     "		class=\"{{ class }}\"\n" +
+    "		ng-class=\"{ 'input-error': searchValidation }\"\n" +
     "		ng-disabled=\"disabled\"\n" +
     "		placeholder=\"{{ placeholder }}\"\n" +
     "	>\n" +
@@ -17,8 +18,10 @@ angular.module("search.html", []).run(["$templateCache", function($templateCache
     "		ng-click=\"update()\"\n" +
     "		ng-show=\"!typeAhead && dirty && !loading\"\n" +
     "	>Press <kbd>enter</kbd> to search</span>\n" +
+    "	<span ng-show=\"searchValidation\" class=\"error-label\">You have to enter at least {{minSearchLength}} characters</span>\n" +
     "</form>");
 }]);
+
 
 /**
  * Search directive
@@ -42,12 +45,14 @@ angular.module('turn/search', ['turn/search/template']).constant('SEARCH_KEYS', 
         typeAhead: '=',
         placeholder: '@',
         disabled: '=',
-        search: '&'
+        search: '&',
+        minSearchLength: '@'
       },
       templateUrl: 'search.html',
       link: function (scope, element, attrs) {
         angular.extend(scope, {
           dirty: false,
+          searchValidation: false,
           blur: function () {
             element.find('input').blur();
           },
@@ -63,8 +68,16 @@ angular.module('turn/search', ['turn/search/template']).constant('SEARCH_KEYS', 
             }
           },
           update: function () {
-            scope.search({ $param: scope.param });
-            scope.dirty = false;
+          if(scope.minSearchLength && scope.param !== '' && scope.param.length < scope.minSearchLength){
+           scope.searchValidation = true;
+          } else {
+            scope.searchValidation = false;
+            scope.search({
+            $param: scope.param
+            });
+          }
+          scope.dirty = false;
+          scope.$apply();
           },
           clear: function () {
             scope.param = '';
