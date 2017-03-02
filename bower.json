@@ -1,6 +1,6 @@
 {
   "name": "angular-search",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A lightweight Angular search widget",
   "keywords": ["search", "autocomplete", "typeahead", "angular", "ng", "input", "text", "form"],
   "main": "./dist/search.js",
