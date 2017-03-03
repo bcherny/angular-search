@@ -82,7 +82,6 @@ angular
 						});
 					}
 					scope.dirty = false;
-					scope.$apply();
 				},
 
 				/**
@@ -92,14 +91,7 @@ angular
 					scope.param = '';
 					scope.update();
 				}
-
 			});
-
-			// TODO: investigate why this doesn't work when
-			//       declared in the DOM
-			element.find('input').on('keyup paste', scope.change);
-
 		}
 	};
-
 });

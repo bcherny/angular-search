@@ -24,7 +24,7 @@ describe('search', function() {
   beforeEach(function() {
     (this.$compile(this.element))(this.scope);
     this.scope.$apply();
-    return this.scope = this.element.scope();
+    return this.scope = this.element.isolateScope();
   });
   it('should set the element\'s className to the "class" attribute', function() {
     return expect(this.element.find('input').hasClass('size-medium')).toBe(true);
@@ -47,7 +47,7 @@ describe('search', function() {
         blur: function() {}
       };
       spyOn(mock, 'blur');
-      spyOn(($()).__proto__, 'find').andReturn(mock)();
+      spyOn(($()).__proto__, 'find').and.returnValue(mock)();
       this.scope.blur();
       expect(($()).__proto__.find).toHaveBeenCalledWith('input');
       return expect(mock.blur).toHaveBeenCalledWith;
@@ -58,6 +58,13 @@ describe('search', function() {
       spyOn(this.scope, 'update');
       this.scope.change({
         keyCode: 13
+      });
+      return expect(this.scope.update).toHaveBeenCalled();
+    });
+    it('should call #update if the user pressed ENTER, on browsers not supporting keyCode', function() {
+      spyOn(this.scope, 'update');
+      this.scope.change({
+        which: 13
       });
       return expect(this.scope.update).toHaveBeenCalled();
     });
