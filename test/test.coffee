@@ -33,7 +33,7 @@ describe 'search', ->
 
 		(@$compile @element) @scope
 		do @scope.$apply
-		@scope = do @element.scope
+		@scope = do @element.isolateScope
 
 
 	#########################################
@@ -96,6 +96,16 @@ describe 'search', ->
 
 			@scope.change
 				keyCode: 13
+
+			do expect @scope.update
+			.toHaveBeenCalled
+
+		it 'should call #update if the user pressed ENTER, on browsers not supporting keyCode', ->
+
+			spyOn @scope, 'update'
+
+			@scope.change
+				which: 13
 
 			do expect @scope.update
 			.toHaveBeenCalled
@@ -209,10 +219,10 @@ describe 'search', ->
 
 			@scope.minSearchLength = 2
 
-			do scope.update
+			do @scope.update
 
 			expect @scope.searchValidation
-			/toBe true
+			.toBe true
 
 		it 'should set scope.searchValidation to false', ->
 
@@ -220,10 +230,10 @@ describe 'search', ->
 
 			@scope.minSearchLength = 2
 
-			do scope.update
+			do @scope.update
 
 			expect @scope.searchValidation
-			/toBe false
+			.toBe false
 
 
 	describe '#clear', ->

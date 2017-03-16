@@ -144,11 +144,11 @@
 							cache: true,
 							params: { search: text }
 						})
-						.success(function (results) {
+						.then(function (results) {
 							$scope.loading = false;
 							$scope.results = results;
-						})
-						.error(function (err) {
+						},
+						function (err) {
 							$scope.loading = false;
 							throw new Error (err);
 						});
@@ -180,11 +180,11 @@
 							cache: true,
 							params: { search: text }
 						})
-						.success(function (results) {
+						.then(function (results) {
 							$scope.loading = false;
 							$scope.results = results;
-						})
-						.error(function (err) {
+						},
+						function (err) {
 							$scope.loading = false;
 							throw new Error (err);
 						});

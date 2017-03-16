@@ -4,6 +4,8 @@
 	<input
 		type="search"
 		ng-model="param"
+		ng-keyup="change($event)"
+		ng-paste="change($event)"
 		class="{{ class }}"
 		ng-class="{ 'input-error': searchValidation }"
 		ng-disabled="disabled"
